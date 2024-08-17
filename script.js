@@ -63,11 +63,11 @@ document.addEventListener("DOMContentLoaded", function() {
     cardNumberInput.addEventListener("input", function() {
         const cardNumber = cardNumberInput.value;
         if (cardNumber.startsWith("1234")) {
-            cardFlag.src = "../imagens/Visa.jpeg";  
+            cardFlag.src = "./imagens/Visa.jpeg";  
             cardFlag.classList.remove("hidden");
             cardError.classList.add("hidden");
         } else if (cardNumber.startsWith("4321")) {
-            cardFlag.src = "../imagens/Master.jpg"; 
+            cardFlag.src = "./imagens/Master.jpg"; 
             cardFlag.classList.remove("hidden");
             cardError.classList.add("hidden");
         } else if (cardNumber.length > 0) {
