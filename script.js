@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const installmentsSelect = document.getElementById("installments");
     const pixTotalDisplay = document.getElementById("pix-total");
     const creditCardTotalDisplay = document.getElementById("credit-card-total");
+    const installmentsBreakdown = document.getElementById("installments-breakdown");
 
     const pixRadio = document.getElementById("pix");
     const creditCardRadio = document.getElementById("credit-card");
@@ -24,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
         successMessage.classList.add("hidden");
         pagarBtnPix.classList.add("hidden");
         pagarBtnCreditCard.classList.add("hidden");
+        installmentsBreakdown.textContent = ""; 
     }
 
     function calculatePixTotal(value) {
@@ -83,7 +85,23 @@ document.addEventListener("DOMContentLoaded", function() {
         const value = parseFloat(valorInput.value);
         const installments = parseInt(installmentsSelect.value);
         const total = calculateCreditCardTotal(value, installments);
+        
+        
+        const installmentValue = total / installments;
+        
+        
         creditCardTotalDisplay.textContent = total.toFixed(2);
+        
+        
+        let breakdownText = '';
+        for (let i = 1; i <= installments; i++) {
+            breakdownText += `${i}x R$ ${installmentValue.toFixed(2)}`;
+            if (i < installments) {
+                breakdownText += ' | ';
+            }
+        }
+        
+        installmentsBreakdown.textContent = breakdownText;
     });
 
     pagarBtnPix.addEventListener("click", function() {
