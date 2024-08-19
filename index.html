@@ -119,16 +119,16 @@
                 <img id="card-flag" class="card-flag hidden" src="" alt="Bandeira do Cartão">
             </div>
             <p id="card-error" class="error hidden">Número de cartão inválido</p>
-
+        
             <label for="card-holder">Titular:</label>
             <input type="text" id="card-holder" placeholder="Nome do Titular">
-
+        
             <label for="security-code">Cód. Segurança:</label>
             <input type="text" id="security-code" placeholder="CVV">
-
+        
             <label for="expiration-date">Vencimento:</label>
             <input type="text" id="expiration-date" placeholder="MM/AA">
-
+        
             <label for="installments">Parcelas:</label>
             <select id="installments">
                 <option value="1">1x</option>
@@ -137,14 +137,14 @@
                 <option value="4">4x</option>
                 <option value="5">5x</option>
             </select>
-
+        
             <div class="installments-row">
+                <p id="installments-breakdown"></p>
                 <p>Total: R$ <span id="credit-card-total"></span></p>
             </div>
-
+        
             <button id="credit-card-pagar">Pagar</button>
         </div>
-
         <p id="success-message" class="success hidden">Pagamento realizado com sucesso!</p>
     </div>
 
